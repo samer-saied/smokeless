@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>392920950901-t36lphmcl0d56f3cu5h43sbv7ughkfqr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.392920950901-t36lphmcl0d56f3cu5h43sbv7ughkfqr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>392920950901-ienqk4rqptjpe8hkmi3t55lnp7vh9q0v.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB08WhNs8rIBKLfQjI6y8vHntqzLpqbIvw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>392920950901</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>me.samersaied.freesmoking</string>
+	<key>PROJECT_ID</key>
+	<string>freesmoking-ed2bf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>freesmoking-ed2bf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:392920950901:ios:bf77a00fa17734857f303c</string>
+</dict>
+</plist>

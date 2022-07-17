@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "392920950901",
+    "project_id": "freesmoking-ed2bf",
+    "storage_bucket": "freesmoking-ed2bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392920950901:android:43afd5908587fe537f303c",
+        "android_client_info": {
+          "package_name": "me.samersaied.freesmokingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392920950901-ienqk4rqptjpe8hkmi3t55lnp7vh9q0v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.samersaied.freesmokingapp",
+            "certificate_hash": "863cc0c8a8e68b23fd59cb219bf7cd9d3debb315"
+          }
+        },
+        {
+          "client_id": "392920950901-99t2h89eoqibajejp538p407doolbs84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU4gHymxuf32tuZzNNZtTJy4HlWF9eJw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392920950901-99t2h89eoqibajejp538p407doolbs84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
