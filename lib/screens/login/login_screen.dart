@@ -312,7 +312,7 @@ class _BuildLoginFormWidgetState extends State<BuildLoginFormWidget> {
 
 Widget buildIntroText(BuildContext context) {
   var textTheme = Theme.of(context).textTheme;
-  var heightOfScreen = MediaQuery.of(context).size.height - 55;
+  // var heightOfScreen = MediaQuery.of(context).size.height - 55;
 
   return ListBody(
     children: <Widget>[
