@@ -58,6 +58,7 @@ class _CardsScreenState extends State<CardsScreen> {
                   cardColor: AppColors.main2Color.withOpacity(0.7),
                   cardTxt: "2",
                   txtColor: AppColors.whiteColor,
+                  isMore: false,
                   cardIcon: FontAwesomeIcons.solidUser,
                   tapFunc: () {
                     log("User card clicked");
@@ -211,6 +212,7 @@ class _CardsScreenState extends State<CardsScreen> {
                   size: MediaQuery.of(context).size.width - 20,
                   fontName: "Dosis",
                   txt: "Infomation".tr(),
+                  isMore: true,
                   cardColor: AppColors.blueColor.withOpacity(0.7),
                   cardTxt: "2",
                   txtColor: AppColors.whiteColor,
@@ -304,25 +306,6 @@ class _CardsScreenState extends State<CardsScreen> {
                           ),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "* click to update info".tr(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displaySmall!
-                                  .copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14,
-                                    color: AppColors.main6Color,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   )),
               getSizedBox(false),
@@ -334,13 +317,28 @@ class _CardsScreenState extends State<CardsScreen> {
                   txt: "Settings".tr(),
                   cardColor: AppColors.greenColor.withOpacity(0.7),
                   cardTxt: "2",
+                  isMore: true,
                   txtColor: AppColors.whiteColor,
                   cardIcon: FontAwesomeIcons.gear,
-                  tapFunc: () {
+                  tapFunc: () async {
                     if (context.locale.languageCode == 'ar') {
-                      context.setLocale(Locale('en', 'US'));
+                      await alertDialogWidget(
+                              context,
+                              "Are you want to change language to".tr(),
+                              "English".tr(),
+                              2)
+                          .then((value) {
+                        value ? context.setLocale(Locale('en', 'US')) : null;
+                      });
                     } else {
-                      context.setLocale(Locale('ar', 'EG'));
+                      await alertDialogWidget(
+                              context,
+                              "Are you want to change language to".tr(),
+                              "Arabic".tr(),
+                              2)
+                          .then((value) {
+                        value ? context.setLocale(Locale('ar', 'EG')) : null;
+                      });
                     }
                   },
                   cardColumnWidget: Column(
@@ -414,6 +412,7 @@ class _CardsScreenState extends State<CardsScreen> {
                   height: 100,
                   fontName: "Dosis",
                   txt: "Account".tr(),
+                  isMore: false,
                   cardColor: AppColors.mainColor.withOpacity(0.7),
                   cardTxt: "2",
                   txtColor: AppColors.whiteColor,
@@ -516,6 +515,7 @@ class _CardsScreenState extends State<CardsScreen> {
                   cardTxt: "2",
                   txtColor: AppColors.whiteColor,
                   cardIcon: FontAwesomeIcons.dev,
+                  isMore: true,
                   tapFunc: () {
                     launchUrlFun();
                   },

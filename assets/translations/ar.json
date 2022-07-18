@@ -31,7 +31,7 @@
     "Reports": "التقارير" ,
     "More": "المزيد" ,
     "user":"زائر",
-    "User":"مستخدم",
+    "User":"معلومات المستخدم",
     "Stop":"ايقاف",
     "Start Quit":"ابدا الاقلاع\nعن التدخين",
     "Name":"الاسم",
@@ -87,6 +87,8 @@
     "* click to update info":"* اضغط لتحديث البيانات",
     "Send now":"ارسل الان",
     "Please enter your recovery email":"يرجي ادخال البريد الالكتروني",
-    "register now":"سجل الان"
+    "register now":"سجل الان",
+    "Ar":"ع",
+    "En":"En"
 
 } 

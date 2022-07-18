@@ -81,6 +81,8 @@
     "Skip": "Skip",
     "Required":"Required",
     "OK": "OK",
-    "CANCEL": "CANCEL"
+    "CANCEL": "CANCEL",
+    "Ar":"Ar",
+    "En":"En"
 
 } 

@@ -53,13 +53,15 @@ class _LoginScreenState extends State<LoginScreen> {
               passwordController: passwordController,
             );
           }
-          return LoginMainWidget(
-            emailController: emailController,
-            passwordController: passwordController,
-          );
+          return Center(child: CircularProgressIndicator());
         });
   }
 }
+
+///
+///
+///
+////////           Background Widget     ////////
 
 class LoginMainWidget extends StatelessWidget {
   final TextEditingController emailController;
@@ -90,7 +92,7 @@ class LoginMainWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  opacity: 0.2,
+                  opacity: 0.3,
                   image: AssetImage(
                     "assets/images/background.jpg",
                   ),
@@ -140,6 +142,10 @@ class LoginMainWidget extends StatelessWidget {
   }
 }
 
+///
+///
+///
+////////           Login WIdget     ////////
 class BuildLoginFormWidget extends StatefulWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -247,9 +253,9 @@ class _BuildLoginFormWidgetState extends State<BuildLoginFormWidget> {
                                     .trim()
                                     .toString())
                             .then((value) {
-                          setState(() {
-                            isLoaded = false;
-                          });
+                          // setState(() {
+                          //   // isLoaded = false;
+                          // });
                         });
                       } on FirebaseServerException catch (e) {
                         setState(() {
@@ -310,12 +316,48 @@ Widget buildIntroText(BuildContext context) {
 
   return ListBody(
     children: <Widget>[
-      Text(
-        "WELCOME".tr(),
-        style: textTheme.headline3!.copyWith(
-          color: AppColors.whiteColor,
-          fontWeight: FontWeight.w900,
-        ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          InkWell(
+            onTap: () async {
+              if (context.locale.languageCode == 'ar') {
+                context.setLocale(Locale('en', 'US'));
+              } else {
+                context.setLocale(Locale('ar', 'EG'));
+              }
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                color: AppColors.whiteColor,
+                width: 1,
+              )),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  context.locale.languageCode == 'ar' ? "En".tr() : "Ar".tr(),
+                  style: textTheme.headline6!.copyWith(
+                    color: AppColors.whiteColor,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "WELCOME".tr(),
+            style: textTheme.headline3!.copyWith(
+              color: AppColors.whiteColor,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+        ],
       ),
       Text(
         "BACK !".tr(),
@@ -333,7 +375,10 @@ Widget buildIntroText(BuildContext context) {
           fontWeight: FontWeight.w600,
         ),
       ),
-      SizedBox(height: heightOfScreen * 0.15),
+      getSizedBox(true),
+      getSizedBox(true),
+      getSizedBox(true),
+      getSizedBox(true),
       Text(
         "SIGN IN".tr(),
         style: textTheme.headline4!.copyWith(

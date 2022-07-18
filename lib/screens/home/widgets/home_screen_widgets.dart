@@ -280,47 +280,58 @@ class GetMainCustomButton extends StatefulWidget {
 class _GetMainCustomButtonState extends State<GetMainCustomButton> {
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      color: widget.isPressed
+    ///
+    ///
+    /////////////             FUNCATION BUTTON            /////////////
+    void Function()? onPressed = () async {
+      // show the dialog
+      widget.isPressed
+          ? await alertDialogWidget(
+                  context,
+                  "Are you sure to want stop smoking quitting".tr(),
+                  "Read some pieces of advice and keep going with safe life "
+                      .tr(),
+                  2)
+              .then((value) {
+              if (value) {
+                value ? widget.isPressed = false : widget.isPressed = true;
+                context.read<ServicesProvider>().changeSmokingStatus(true);
+              } else {}
+            })
+          : {
+              widget.isPressed = !widget.isPressed,
+              context.read<ServicesProvider>().changeSmokingStatus(false)
+            };
+      setState(() {});
+    };
+
+    return RawMaterialButton(
+      fillColor: widget.isPressed
           ? AppColors.blueColor.withOpacity(0.8) //STOP
           : AppColors.mainColor.withOpacity(0.8), // START
-      // height: 150,
-      minWidth: 150,
       elevation: 5,
-
       shape: const CircleBorder(),
-      onPressed: () async {
-        // show the dialog
-        widget.isPressed
-            ? await alertDialogWidget(
-                    context,
-                    "Are you sure to want stop smoking quitting".tr(),
-                    "Read some pieces of advice and keep going with safe life "
-                        .tr(),
-                    2)
-                .then((value) {
-                if (value) {
-                  value ? widget.isPressed = false : widget.isPressed = true;
-                  context.read<ServicesProvider>().changeSmokingStatus(true);
-                } else {}
-              })
-            : {
-                widget.isPressed = !widget.isPressed,
-                context.read<ServicesProvider>().changeSmokingStatus(false)
-              };
-        setState(() {});
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(60),
-        child: Wrap(
+      onPressed: onPressed,
+      child: Container(
+        height: MediaQuery.of(context).size.height / 5,
+        width: MediaQuery.of(context).size.width / 2,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Icon(
+              widget.isPressed ? FontAwesomeIcons.stop : FontAwesomeIcons.play,
+              color: Colors.white,
+              size: 30,
+            ),
+            getSizedBox(false),
             Text(
               textAlign: TextAlign.center,
               maxLines: 2,
               widget.isPressed ? 'Stop'.tr() : 'Start Quit'.tr(),
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
