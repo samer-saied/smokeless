@@ -42,10 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 SnackBar(content: Text(snapshot.error.toString())));
           } else if (snapshot.hasData) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MainPageScreen()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => MainPageScreen()));
             });
           } else {
             return LoginMainWidget(

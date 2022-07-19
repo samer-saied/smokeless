@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freesmoking/core/app_color.dart';
 import 'package:freesmoking/screens/login/login_screen.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/app_provider.dart';
@@ -18,7 +19,7 @@ main() async {
   };
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+  MobileAds.instance.initialize();
   await Firebase.initializeApp();
   runApp(EasyLocalization(
     startLocale: Locale('en', 'US'),
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      title: 'SmokeLess',
+      title: 'cigarettes off',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Roboto',

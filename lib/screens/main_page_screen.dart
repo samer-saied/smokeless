@@ -1,19 +1,105 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
+import '../core/ads/ad_helper.dart';
 import '../core/app_bottombar.dart';
 import '../core/app_color.dart';
 import '../provider/app_provider.dart';
 
-class MainPageScreen extends StatelessWidget {
-  const MainPageScreen({Key? key}) : super(key: key);
+class MainPageScreen extends StatefulWidget {
+  MainPageScreen({Key? key}) : super(key: key);
 
-  // bool isPressed = false;
+  @override
+  State<MainPageScreen> createState() => _MainPageScreenState();
+}
+
+class _MainPageScreenState extends State<MainPageScreen> {
+  InterstitialAd? _interstitialAd;
+  bool _isInterstitialAdReady = false;
+  int _isLoadAD = 0;
+
+  void _createInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              // MainPageScreen();
+            },
+          );
+
+          setState(() {
+            _interstitialAd = ad;
+            _isInterstitialAdReady = true;
+          });
+        },
+        onAdFailedToLoad: (err) {
+          print('Failed to load an interstitial ad: ${err.message}');
+          _isInterstitialAdReady = false;
+        },
+      ),
+    );
+  }
+
+  void _showInterstitialAd() {
+    if (_interstitialAd == null) {
+      print('Warning: attempt to show interstitial before loaded.');
+      return;
+    }
+    _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdShowedFullScreenContent: (InterstitialAd ad) =>
+          print('ad onAdShowedFullScreenContent.'),
+      onAdDismissedFullScreenContent: (InterstitialAd ad) {
+        print('$ad onAdDismissedFullScreenContent.');
+        ad.dispose();
+        _createInterstitialAd();
+      },
+      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+        print('$ad onAdFailedToShowFullScreenContent: $error');
+        ad.dispose();
+        _createInterstitialAd();
+      },
+    );
+    _interstitialAd!.show();
+    _interstitialAd = null;
+  }
+
+  @override
+  void dispose() {
+    _interstitialAd?.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    _createInterstitialAd();
+
+    // Future.delayed(Duration(seconds: 10), () {
+    //   if (_isInterstitialAdReady) {
+    //     _showInterstitialAd();
+    //     log("=================== ADS INIT ==============================");
+    //   }
+    // });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // remainTime = context.watch<ServicesProvider>().getRemainingTime(2020, 7, 5);
-    // double size = MediaQuery.of(context).size.width - 30;
+    if (_isInterstitialAdReady) {
+      _isLoadAD += 1;
+      log("=================== NO. ${_isLoadAD.toString()} ==============================");
+      if (_isLoadAD % 5 == 0) {
+        log("=================== ADS SHOW ${_isLoadAD.toString()} ==============================");
+        _showInterstitialAd();
+      }
+    }
+
     return Scaffold(
       backgroundColor: AppColors.blackColor,
       bottomNavigationBar: appBottomBarWidget(context),
@@ -27,7 +113,7 @@ class MainPageScreen extends StatelessWidget {
                   "assets/images/background.jpg",
                 ),
                 fit: BoxFit.cover)),
-        child: context.watch<AppMainProvider>().getCurrentScreen(),
+        child: context.read<AppMainProvider>().getCurrentScreen(),
       ),
     );
   }

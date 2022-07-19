@@ -218,7 +218,7 @@ class _AskScreenState extends State<AskScreen> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          const MainPageScreen()));
+                                                          MainPageScreen()));
                                             } catch (error) {
                                               alertDialogWidget(
                                                   context,
@@ -263,11 +263,7 @@ class _AskScreenState extends State<AskScreen> {
                                         Colors.transparent),
                                   ),
                                   onPressed: () {
-                                    Navigator.of(context)
-                                        .pushReplacement(MaterialPageRoute(
-                                      builder: (context) =>
-                                          const MainPageScreen(),
-                                    ));
+                                    Navigator.of(context).pop();
                                   },
                                   child: SizedBox(
                                     width:

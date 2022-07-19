@@ -6,6 +6,10 @@ import 'package:provider/provider.dart';
 import '../../core/app_color.dart';
 import 'widgets/home_screen_widgets.dart';
 
+///
+///
+///
+/////////////       HOMEPAGE WIDGET     ////////////////
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   bool isPressed = false;
@@ -93,6 +97,10 @@ class HomePage extends StatelessWidget {
   }
 }
 
+///
+///
+///
+/////////////       FREE SMOKING WIDGET     ////////////////
 class FreeSmokingCounterWidget extends StatelessWidget {
   final bool? isSmoking;
   const FreeSmokingCounterWidget({
