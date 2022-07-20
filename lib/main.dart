@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freesmoking/core/app_color.dart';
 import 'package:freesmoking/screens/login/login_screen.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/app_provider.dart';
@@ -19,7 +19,7 @@ main() async {
   };
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  MobileAds.instance.initialize();
+  // MobileAds.instance.initialize();
   await Firebase.initializeApp();
   runApp(EasyLocalization(
     startLocale: Locale('en', 'US'),

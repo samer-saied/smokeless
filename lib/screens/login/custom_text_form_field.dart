@@ -86,7 +86,7 @@ class CustomTextFormField extends StatelessWidget {
               return null;
             },
             onFieldSubmitted: (value) {},
-            textInputAction: TextInputAction.next,
+            textInputAction: TextInputAction.done,
             cursorColor: AppColors.whiteColor,
             inputFormatters: inputFormatters,
             decoration: InputDecoration(
