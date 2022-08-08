@@ -17,5 +17,5 @@ help you quit smoking by advice and collecting information about the date of qui
 
 **Available** : IOS & Android
 
-Made with :fa-heart: by **Samer Saied** &copy;
+Made with &hearts; by **Samer Saied** &copy;
 [visit website](http://samersaied.me "samersaied website")
