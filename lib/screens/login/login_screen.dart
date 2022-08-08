@@ -3,9 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:freesmoking/core/app_color.dart';
 import 'package:freesmoking/models/firebase_exception.dart';
+import 'package:freesmoking/provider/service_provider.dart';
 import 'package:freesmoking/screens/forget/forget_screen.dart';
 import 'package:freesmoking/screens/register/register_screen.dart';
 import 'package:freesmoking/services/firebase_storage.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/alert_dialog.dart';
 import '../home/widgets/home_screen_widgets.dart';

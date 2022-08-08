@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:freesmoking/screens/home/home_screen.dart';
 import 'package:freesmoking/screens/main_page_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -263,7 +264,10 @@ class _AskScreenState extends State<AskScreen> {
                                         Colors.transparent),
                                   ),
                                   onPressed: () {
-                                    Navigator.of(context).pop();
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MainPageScreen()));
                                   },
                                   child: SizedBox(
                                     width:

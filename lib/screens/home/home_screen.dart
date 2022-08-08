@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
     servicesProvider.getUserData(false);
     servicesProvider.getAdvice(isSmoke: servicesProvider.isSmoking);
     // servicesProvider.addAdvice();
-
+    // servicesProvider.addAdvice();
+//
     return SafeArea(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

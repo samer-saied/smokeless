@@ -109,12 +109,14 @@ class ServicesProvider with ChangeNotifier, DiagnosticableTreeMixin {
   /// ADD Advice
   addAdvice() async {
     Map<String, dynamic> advice = {
-      "date": "22-06-2019",
-      "data": "Save your life early",
-      "by": "Samer Saied",
-      "index": "1",
+      "date": "08-08-2022",
+      "data": "قل : لا ادخن ولا تقل مقلع حتي تتجنب الالحاح للتدخين",
+      "by": "متداول",
+      "index": 21,
     };
-    await firebaseStorage.addAdvice(type: "smoke", newAdvice: advice);
+    await firebaseStorage.addAdvice(type: "QUIT", newAdvice: advice);
+    // QUIT 21 new 22
+    // SMOKE  10 new 11
   }
 
   /// Delete Advice
