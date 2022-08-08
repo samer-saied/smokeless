@@ -1,16 +1,16 @@
-# freesmoking
+## CIGARETTES OFF 
 
-A new Flutter project.
+help you quit smoking by advice and collecting information about the date of quitting and showing statistics
 
-## Getting Started
+|  1 | 2  |  3 |
+| :------------: | :------------: | :------------: |
+|  [![homepage](https://play-lh.googleusercontent.com/hD1Wzq6E-FukhrWwyxKMZecLd7seh99wfQTF5z90vCKbg5efe2ugncRaC1ASxt7LOg=w1052-h592-rw "homepage")](https://play-lh.googleusercontent.com/hD1Wzq6E-FukhrWwyxKMZecLd7seh99wfQTF5z90vCKbg5efe2ugncRaC1ASxt7LOg=w1052-h592-rw "homepage") | [![lossHealth](https://play-lh.googleusercontent.com/gNmd3lsxJ4n96BPTkfL2eQkFpU_K__ge6ZgdTicFyNz_sDmcBR1VawGpxi7tcqCNUIA=w1052-h592-rw "lossHealth")](https://play-lh.googleusercontent.com/gNmd3lsxJ4n96BPTkfL2eQkFpU_K__ge6ZgdTicFyNz_sDmcBR1VawGpxi7tcqCNUIA=w1052-h592-rw "lossHealth")  |  [![home 2](https://play-lh.googleusercontent.com/4zrP492fs53tB_ewt301qpeoRjU587_MlbcctqxmL8QNbSlgJ4HFJo8EsLhovqcsddUR=w1052-h592-rw "home 2")](https://play-lh.googleusercontent.com/4zrP492fs53tB_ewt301qpeoRjU587_MlbcctqxmL8QNbSlgJ4HFJo8EsLhovqcsddUR=w1052-h592-rw "home 2") |
+| [![statistics](https://play-lh.googleusercontent.com/PyB_XopdWhD2jktYbctQcXpB2ewcP6pNBA_P123XnxZ85gFpb31yQt-fDR0i2aGe-SM=w1052-h592-rw "statistics")](https://play-lh.googleusercontent.com/PyB_XopdWhD2jktYbctQcXpB2ewcP6pNBA_P123XnxZ85gFpb31yQt-fDR0i2aGe-SM=w1052-h592-rw "statistics")  | [![login](https://play-lh.googleusercontent.com/jqmdiI5n7lHmqtuC-xGBL9y4ZH6nj7yQ2jdysF8A2z6w0IcqPTjRFDk9CPSfv_byCHs=w1052-h592-rw "login")](https://play-lh.googleusercontent.com/jqmdiI5n7lHmqtuC-xGBL9y4ZH6nj7yQ2jdysF8A2z6w0IcqPTjRFDk9CPSfv_byCHs=w1052-h592-rw "login")  | [![moreScreen](https://play-lh.googleusercontent.com/31joO_64GBjXiRWruX3tLVAU7s-I_K6QAHx83Uaq9Bxv-Ugy_aMQ_uogL05AZKdAhjg2=w1052-h592-rw "moreScreen")](https://play-lh.googleusercontent.com/31joO_64GBjXiRWruX3tLVAU7s-I_K6QAHx83Uaq9Bxv-Ugy_aMQ_uogL05AZKdAhjg2=w1052-h592-rw "moreScreen")  |
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+**Framework**: Flutter
+**BackEnd** : Firebase
+**Available** : IOS & Android
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Made with :fa-heart: by **Samer Saied**
+[visit website](http://samersaied.me "samersaied website")
