@@ -18,4 +18,4 @@ help you quit smoking by advice and collecting information about the date of qui
 **Available** : IOS & Android
 
 Made with &hearts; by **Samer Saied** &copy;
-[visit website](http://samersaied.me "samersaied website")
+[visit website](http://samersaied.site "samersaied website")
